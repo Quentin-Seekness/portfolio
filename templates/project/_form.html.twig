@@ -1,0 +1,19 @@
+{{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+
+    {# {{ form_widget(form) }} #}
+
+    {{ form_row(form.features) }}
+
+    {# {{ form_label(form.features) }}
+    {{ form_errors(form.features) }}
+
+    <ul>
+    {% for featureField in form.features %}
+        <li>
+            {{ form_errors(featureField) }}
+            {{ form_widget(featureField) }}
+        </li>
+    {% endfor %}
+    </ul> #}
+    <button type="submit">Créer</button>
+{{ form_end(form) }}

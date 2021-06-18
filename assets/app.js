@@ -11,6 +11,10 @@ import './styles/app.css';
 // start the Stimulus application
 import './bootstrap';
 
+import './components/collection.js'
+
+// require('./components/collection.js');
+
 const app = {
     init: function() {
 

@@ -2,10 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\ProjectRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ProjectRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass=ProjectRepository::class)
@@ -71,6 +72,7 @@ class Project
 
     public function __construct()
     {
+        $this->createdAt = new DateTime();
         $this->techno = new ArrayCollection();
     }
 

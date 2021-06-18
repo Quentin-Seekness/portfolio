@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\TechnoRepository;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -51,6 +52,7 @@ class Techno
 
     public function __construct()
     {
+        $this->createdAt = new DateTime();
         $this->projects = new ArrayCollection();
     }
 

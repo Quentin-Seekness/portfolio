@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PORTFOLIO - New project{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('collection') }}
+{% endblock %}
+
+{% block body %}
+<h1>Add a project</h1>
+
+{{ include('project/_form.html.twig') }}
+{% endblock %}
