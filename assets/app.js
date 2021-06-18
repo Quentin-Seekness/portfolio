@@ -10,3 +10,12 @@ import './styles/app.css';
 
 // start the Stimulus application
 import './bootstrap';
+
+const app = {
+    init: function() {
+
+        console.log('app.js is charged');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', app.init());
