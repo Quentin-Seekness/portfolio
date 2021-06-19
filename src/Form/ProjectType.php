@@ -28,11 +28,24 @@ class ProjectType extends AbstractType
                     'attr' => ['class' => 'feature-input']
                 ],
                 'allow_add' => true,
+                'allow_delete' => true,
+                'delete_empty' => true,
                 'prototype' => true,
             ])
             ->add('gitLink')
             ->add('webLink')
-            ->add('images')
+            ->add('images', CollectionType::class, [
+                // each entry in the array will be a "text" field
+                'entry_type' => TextType::class,
+                // these options are passed to each "text" type
+                'entry_options' => [
+                    'attr' => ['class' => 'images-input']
+                ],
+                'allow_add' => true,
+                'allow_delete' => true,
+                'delete_empty' => true,
+                'prototype' => true,
+            ])
             ->add('techno', EntityType::class, [
                 'class' => Techno::class,
                 'choice_label' => 'name',
