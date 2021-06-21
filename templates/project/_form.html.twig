@@ -49,8 +49,13 @@
     {# --------------------------------------- #}
 
     {# we need to hide those div element as they are already rendered by the prototypes above #}
-    {{ form_widget(form.features, {'attr': {'type': 'hidden'}}) }}
-    {{ form_widget(form.images, {'attr': {'type': 'hidden'}}) }}
+    {% if form.features is empty %}
+        {{ form_widget(form.features, {'attr': {'type': 'hidden'}}) }}
+    {% endif %}
+    {% if form.images is empty %}
+        {{ form_widget(form.images, {'attr': {'type': 'hidden'}}) }}
+    {% endif %}
+    
 
     <button type="submit">Créer</button>
 {{ form_end(form) }}

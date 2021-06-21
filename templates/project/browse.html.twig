@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous mes projets{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 mt-3 mb-3">
+            <h1>Liste des projets</h1>
+            <div class="d-flex justify-content-between">
+                <div class="d-flex">
+                    <a href="{{ path('admin_project_add') }}" class="btn btn-success">Ajouter un projet</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-12">
+            <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Année</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Features</th>
+                    <th scope="col">Technos</th>
+                    <th scope="col">Lien Git</th>
+                    <th scope="col">Lien Web</th>
+                    <th scope="col">Screenshots</th>
+                    <th scope="col" colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for project in projects %}
+                <tr class="table-light">
+                <td>{{ project.name }}</td>
+                <td>{{ project.yearStart }}</td>
+                <td>{{ project.description }}</td>
+                <td>
+                    {% for feature in project.features %}
+                        {{ feature }} </br>
+                    {% endfor %}
+                </td>
+                <td>
+                    {% for techno in project.techno %}
+                        {{ techno.name }} </br>
+                    {% endfor %}
+                </td>
+                <td>{{ project.gitLink }}</td>
+                <td>{{ project.webLink }}</td>
+                <td>
+                    {% for image in project.images %}
+                        <img src="{{ image }}" alt="" width="80px"> </br>
+                    {% endfor %}
+                </td>
+                <div class="d-inline">
+                    <td class="text-center"><a class="btn btn-warning" href="{{ path('admin_project_edit', {id: project.id}) }}"><i class="fas fa-edit"></i></a></td>
+                    <td>
+                        <form action="{{ path('admin_project_delete', {id: project.id}) }}" method="POST">
+                        {# for this to work in delete method=> Request::enableHttpMethodParameterOverride(); in public/index.php (https://symfony.com/doc/current/reference/configuration/framework.html#http-method-override) #}
+                            {# Fake HTTP Method #}
+                            <input type="hidden" name="_method" value="DELETE"/>
+                            {# CSRF Token #}
+                            <input type="hidden" name="token" value="{{ csrf_token('delete-project') }}"/>
+                            {# Delete button and confirmation #}
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-danger dropdown-toggle"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="far fa-trash-alt"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <button class="btn btn-danger dropdown-item" type="submit">Oui, je veux supprimer</button>
+                                    <a class="dropdown-item" href="#" data-toggle="dropdown">Oups, annuler&nbsp;!</a>
+                                </div>
+                            </div>
+                        </form>
+                    </td>
+                </div>
+                </tr>
+            {% endfor %}
+            </tbody>
+            </table>    
+        </div>
+    </div>
+</div>
+{% endblock %}
