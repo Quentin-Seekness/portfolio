@@ -1,0 +1,10 @@
+{{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+
+    <div class="--form mt-5 mb-5">
+        {{ form_widget(form) }}
+    </div>
+    <div class="mb-5 d-flex justify-content-end">
+        <a class="btn btn-danger mr-2" href="{{ path('admin_techno_browse') }}">Annuler</a>
+        <button type="submit" class="btn btn-success">Valider</button>
+    </div>
+{{ form_end(form) }}

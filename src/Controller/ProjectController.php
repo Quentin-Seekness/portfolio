@@ -32,12 +32,11 @@ class ProjectController extends AbstractController
             $entityManager->persist($project);
             $entityManager->flush();
 
-            dd($project);
             return $this->redirectToRoute('admin_project_browse');
         }
 
         // as long as the form is not submitted or valid we display the create view
-        return $this->render('project/create.html.twig', [
+        return $this->render('back/project/create.html.twig', [
             'form' => $form->createView(),
         ]);
     }
@@ -49,13 +48,13 @@ class ProjectController extends AbstractController
     {
         $projects = $projectRepository->findAll();
 
-        return $this->render('project/browse.html.twig', [
+        return $this->render('back/project/browse.html.twig', [
             'projects' => $projects,
         ]);
     }
 
     /**
-     * @Route("/admin/project/edit/{id}", name="admin_project_edit", methods={"GET","POST"})
+     * @Route("/admin/project/edit/{id<\d+>}", name="admin_project_edit", methods={"GET","POST"})
      */
     public function edit(Project $project, Request $request): Response
     {
@@ -75,7 +74,7 @@ class ProjectController extends AbstractController
         }
 
 
-        return $this->render('project/edit.html.twig', [
+        return $this->render('back/project/edit.html.twig', [
             'project' => $project,
             'form' => $form->createView(),
         ]);

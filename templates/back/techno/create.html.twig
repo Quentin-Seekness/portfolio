@@ -1,0 +1,20 @@
+{% extends 'back/base.html.twig' %}
+
+{% block title %}PORTFOLIO - New techno{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-2">
+        </div>
+        <div class="col-8">
+            <h1 class="mb-3 text-center">Ajouter une techno</h1>
+            
+            {{ include('back/techno/_form.html.twig') }}
+        </div>
+        <div class="col-2 mt-3">
+            <a href="{{ path('admin_techno_browse') }}"><button type="submit" class="btn btn-warning">Retour</button></a>
+        </div>
+    </div>
+</div>
+{% endblock %}
