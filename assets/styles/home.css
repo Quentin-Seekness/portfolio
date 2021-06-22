@@ -1,0 +1,11 @@
+.--background {
+    height: 100vh;
+    background-color: #58a258;
+    background-image: url('../../public/images/bg_tapestry_green.png');
+    background-size: 50%;
+}
+
+.--nav-container {
+    background-color: linen;
+    box-shadow: 0px 11px 8px -4px black;
+}
