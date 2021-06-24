@@ -1,8 +1,55 @@
 .--background {
     height: 100vh;
-    background-color: #58a258;
+    background-color: #557067e6;
     background-image: url('../../public/images/bg_tapestry_green.png');
-    background-size: 50%;
+    background-size: 60%;
+}
+
+.--spotlight {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: radial-gradient( 
+        ellipse at top,
+        transparent 40%,
+        black 70%
+    );
+}
+
+.--frame-ovale {
+    background-image: url('../../public/images/frames/frame_o_1.png');
+    height: 40%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.--frame-rectangle {
+    background-image: url('../../public/images/frames/frame_r_2.png');
+    height: 30%;
+    width: 30%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+}
+
+.--frame-rectangle2 {
+    height: 30%;
+    width: 30%;
+    position: absolute;
+    z-index: 2;
+}
+
+.--frame-image {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+}
+
+.--frame-square {
+    background-image: url('../../public/images/frames/frame_s_1.png');
+    height: 30%;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .--nav-container {

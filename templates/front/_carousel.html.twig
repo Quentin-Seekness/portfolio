@@ -1,0 +1,11 @@
+
+    <ol id="slides" class="--images-container">
+    {# <ol id="slides" class="--images-container --frame-rectangle"> #}
+        {% for image in project.images %}
+            <li><img class="slide" src="{{image}}" alt=""></li>
+        {% endfor %}
+        <span class="nav fa fa-chevron-right fa-3x" id="right"></span>
+    </ol>
+ 
+    {# <span class="nav fa fa-chevron-left fa-3x" id="left"></span> #}
+   

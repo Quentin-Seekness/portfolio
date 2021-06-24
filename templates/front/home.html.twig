@@ -2,10 +2,18 @@
 
 {% block body %}
 
-
 <div class="--background">
 {{ include('front/_nav.html.twig') }}
-    <h1>HOME</h1>
+    <div class="--spotlight">
+        <div class="--frame-rectangle2">
+            <img src="{{ asset('/images/frames/frame_r_2.png') }}" alt="" class="--frame-image">
+            {% for project in projects %}
+                {% include 'front/_carousel.html.twig' with {'project': project} %}
+            {% endfor %}
+        </div>
+        <div class="--frame-ovale"></div>
+        <div class="--frame-square"></div>
+    </div>
 </div>
 
 {% endblock %}

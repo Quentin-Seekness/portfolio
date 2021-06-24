@@ -9,14 +9,14 @@
 import './styles/app.css';
 import './styles/form.css';
 import './styles/home.css';
+import './styles/carousel.css';
 import './styles/bootstrap.min.css';
 
 // start the Stimulus application
 import './bootstrap';
 
-import './components/collection.js'
-
-// require('./components/collection.js');
+import './components/collection.js';
+import './components/carousel.js';
 
 const app = {
     init: function() {
