@@ -5,15 +5,33 @@
 <div class="--background">
 {{ include('front/_nav.html.twig') }}
     <div class="--spotlight">
-        <div class="--frame-rectangle2">
-            <img src="{{ asset('/images/frames/frame_r_2.png') }}" alt="" class="--frame-image">
-            {% for project in projects %}
-                {% include 'front/_carousel.html.twig' with {'project': project} %}
-            {% endfor %}
-        </div>
-        <div class="--frame-ovale"></div>
-        <div class="--frame-square"></div>
     </div>
+
+    {% for project in projects %}
+    <div>
+        <h3 class="--title">{{ project.name }}</h3>
+    </div>
+
+    <div class="--frames-container">
+        <div class="--container-rectangle">
+            <img src="{{ asset('/images/frames/frame_r_2.png') }}" alt="" class="--frame-rectangle">
+            {% include 'front/_carousel.html.twig' with {'project': project} %}
+        </div>
+
+        <div class="--container-ovale">
+            <img src="{{ asset('/images/frames/frame_o_1.png') }}" alt="" class="--frame-ovale">
+        </div>
+
+        <div class="--container-square">
+            <img src="{{ asset('/images/frames/frame_s_1.png') }}" alt="" class="--frame-square">
+        </div>
+    </div>
+    <div class="--description-container">
+        <img src="{{ asset('/images/laiton_plaque.jpg') }}" style="visibility:hidden; width:15%" alt="">
+        <p class="--description">{{ project.description }}</p>
+    </div>
+    {% endfor %}
+    
 </div>
 
 {% endblock %}

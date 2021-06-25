@@ -14,45 +14,79 @@
         transparent 40%,
         black 70%
     );
-}
-
-.--frame-ovale {
-    background-image: url('../../public/images/frames/frame_o_1.png');
-    height: 40%;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-.--frame-rectangle {
-    background-image: url('../../public/images/frames/frame_r_2.png');
-    height: 30%;
-    width: 30%;
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: relative;
-}
-
-.--frame-rectangle2 {
-    height: 30%;
-    width: 30%;
-    position: absolute;
-    z-index: 2;
-}
-
-.--frame-image {
-    position: absolute;
-    z-index: 3;
-    width: 100%;
-}
-
-.--frame-square {
-    background-image: url('../../public/images/frames/frame_s_1.png');
-    height: 30%;
-    background-repeat: no-repeat;
-    background-size: contain;
+    z-index: 5;
+    pointer-events: none;
 }
 
 .--nav-container {
     background-color: linen;
     box-shadow: 0px 11px 8px -4px black;
 }
+
+.--title {
+    text-align: center;
+    color: red;
+}
+
+.--description-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/public/images/laiton_plaque.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.--description {
+    text-align: center;
+    color: #29170d;
+    position: absolute;
+    width: 10%;
+    /* background-image: url('/public/images/laiton_plaque.jpg'); */
+}
+
+
+/*! --------------FRAMES------------------------- */
+
+.--frames-container {
+    /* background-color: lightsalmon; */
+    display: flex;
+    align-items: center;
+    flex-flow: wrap;
+    padding: 0 5% 5% 5%;
+    justify-content: space-between;
+}
+
+.--container-rectangle {
+    width: 30%;
+    align-self: flex-start;
+    position: relative;
+}
+
+.--container-ovale {
+    width: 20%;
+    align-self: flex-end;
+}
+
+.--container-square {
+    width: 30%;
+}
+
+.--frame-rectangle {
+    width: 100%;
+    align-self: flex-start;
+    position: absolute;
+    z-index: 2;
+}
+
+.--frame-ovale {
+    width: 100%;
+    align-self: flex-end;
+}
+
+.--frame-square {
+    width: 100%;
+}
+/*! ------------------------------------------- */
+
